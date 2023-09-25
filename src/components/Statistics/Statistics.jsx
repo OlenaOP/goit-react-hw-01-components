@@ -9,10 +9,14 @@ const ListItem = ({ id, label, percentage }) => {
   );
 };
 
+const StatTitle = ({ title }) => {
+  return <h2 className={css.title}>{title}</h2>;
+};
+
 export const Statistics = ({ title, stats }) => {
   return (
     <section className={css.statistics}>
-      <h2 className={css.title}>{title}</h2>
+      {title ? <StatTitle title={title} /> : ''}
 
       <ul className={css.statList}>
         {stats.map(item => {
